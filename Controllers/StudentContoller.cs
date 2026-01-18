@@ -40,5 +40,21 @@ namespace EfcorePractice.Controllers
             _services.deletestud(id);
             return Ok("student deleted successfully");
         }
+        [HttpGet("{id}")]
+        public IActionResult getstudentbyid(int id)
+        {
+            var student = _services.getstudentbyid(id);
+            if (student == null)
+            {
+                return NotFound("Student not found");
+            }
+            return Ok(student);
+        }
+        [HttpGet("domain/{price}")]
+        public IActionResult GetStudentsByDomain(string price)
+        {
+            var students = _services.GetStudentsByDomain(price);
+            return Ok(students);
+        }
     }
 }

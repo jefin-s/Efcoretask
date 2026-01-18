@@ -14,5 +14,7 @@ namespace EfcorePractice.Models
         public  string Name { get; set; }
         [Column ("course")]
         public string domain { get; set; }
+       
+        public string ok { get; set; }
     }
 }

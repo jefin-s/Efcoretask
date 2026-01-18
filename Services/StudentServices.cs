@@ -42,5 +42,15 @@ namespace EfcorePractice.Services
             }
             
         }
+        public Students?  getstudentbyid(int id)
+        {
+            var student = _context.Students.FirstOrDefault(s => s.Id == id);
+            return student;
+        }
+
+        public List<Students> GetStudentsByDomain(string price)
+        {
+            return _context.Students.Where(s => s.domain == price).ToList();
+        }
     }
 }
